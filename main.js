@@ -3,6 +3,8 @@
 ////////////////////////COTIZADOR SEGUROS////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
+// PREGUNTAR QUE TIPO DE VEHICULO QUEREMOS COTIZAR
+
 let tipoVehiculo = prompt ("¿Que tipo de vehiculo desea cotizar? Responder: A si es un auto o B si es una moto");
 tipoVehiculo = tipoVehiculo.toLowerCase()
 
@@ -18,6 +20,7 @@ const validacion = (tipoVehiculo) => {
 
 validacion(tipoVehiculo)
 
+//ASIGNAR UN VALOR DE POLIZA SEGUN MODELO Y TIPO DE VEHICULO 
 
 let valorVehiculo=0;
 let modelo= prompt("Ingrese el modelo de fabricacion de su vehiculo")
@@ -52,6 +55,8 @@ const valorModelo = (tipoVehiculo,modelo) =>{
 }
 valorModelo(tipoVehiculo,modelo)
 
+// VERIFICAR SI NUESTRO VEHICULO TIENE GNC 
+
 let gnc=false;
 const tieneGas = (tipoVehiculo) =>{
     if (tipoVehiculo === "a"){
@@ -62,6 +67,7 @@ const tieneGas = (tipoVehiculo) =>{
 tieneGas(tipoVehiculo)
 
 
+//SI EL VEHICULO TIENE GNC, LE AUMENTAMOS SU VALOR UN 5% 
 
 let nuevoValor= 0;
 const aumentoGas =(tipoVehiculo,gnc) =>{    
@@ -72,6 +78,7 @@ const aumentoGas =(tipoVehiculo,gnc) =>{
 }
 aumentoGas(tipoVehiculo,gnc)
 
+// SEGUN SU VALOR FINAL, DEFINIMOS LAS CUOTAS Y UN AUMENTO CADA 4 MESES 
 
 const mostrarCuotas = (valorVehiculo) =>{
     if (gnc==true){
